@@ -1,0 +1,9 @@
+[submodule "Alamofire"]
+	path = Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "OAuthSwift"]
+	path = OAuthSwift
+	url = https://github.com/OAuthSwift/OAuthSwift.git
+[submodule "OAuthSwiftAlamofire"]
+	path = OAuthSwiftAlamofire
+	url = https://github.com/OAuthSwift/OAuthSwiftAlamofire.git
