@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AniLibrary_Sync" customModuleProvider="target">
             <connections>
+                <outlet property="statusmenu" destination="MgH-hG-cY4" id="5Sc-fV-KEp"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -444,6 +445,9 @@
                 <menuItem isSeparatorItem="YES" id="gVN-bQ-FYw"/>
                 <menuItem title="Preferences…" id="GEC-qk-oSj">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showPreferencesWithSender:" target="Voe-Tx-rLC" id="VEb-Jz-WM1"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="i7c-7Z-kGd"/>
                 <menuItem title="Sync Now" id="D0k-g3-O8p">

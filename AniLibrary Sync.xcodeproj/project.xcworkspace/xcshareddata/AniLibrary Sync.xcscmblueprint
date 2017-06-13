@@ -1,14 +1,17 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "625AB30AE4C8BF2FD94BCFB9397000EC025D589F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "625AB30AE4C8BF2FD94BCFB9397000EC025D589F" : 9223372036854775807,
     "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : 9223372036854775807,
     "3F9A9E615F10C87932C5CF2203AB7432A7767C8F" : 9223372036854775807,
     "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4EE847CC-3840-4FEF-AA2F-CA4E0DE05FCD",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "625AB30AE4C8BF2FD94BCFB9397000EC025D589F" : "AniLibrary%20Sync\/",
     "A65BCAA9B7A77500BBF95593800C3F1B9D215F5E" : "AniLibrary%20Sync\/OAuthSwift\/",
     "3F9A9E615F10C87932C5CF2203AB7432A7767C8F" : "AniLibrary%20Sync\/OAuthSwiftAlamofire\/",
     "67620B5EFA902936DF04070AF595B76AB0333747" : "AniLibrary%20Sync\/Alamofire\/"
@@ -21,6 +24,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OAuthSwift\/OAuthSwiftAlamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3F9A9E615F10C87932C5CF2203AB7432A7767C8F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Atelier-Shiori\/AniLibrary-Sync.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "625AB30AE4C8BF2FD94BCFB9397000EC025D589F"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",

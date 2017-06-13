@@ -10,17 +10,24 @@
 		2D2A60A21EDF9772007CB521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2A60A11EDF9772007CB521 /* AppDelegate.swift */; };
 		2D2A60A41EDF9772007CB521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D2A60A31EDF9772007CB521 /* Assets.xcassets */; };
 		2D2A60A71EDF9773007CB521 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2A60A51EDF9773007CB521 /* MainMenu.xib */; };
+		2D626E451EF074C50057AC3F /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; };
+		2D626E461EF074C50057AC3F /* MASPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D697DC01EF06BCD0053F576 /* XMLtoAtarashiiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */; };
+		2D697DD71EF073410053F576 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D697DD51EF073410053F576 /* General.swift */; };
+		2D697DD81EF073410053F576 /* General.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D697DD61EF073410053F576 /* General.xib */; };
+		2D697DDA1EF074700053F576 /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; };
 		2D950EAA1EE1D2D7002BBF50 /* MyAnimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */; };
 		2D950EAC1EE1D317002BBF50 /* ListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950EAB1EE1D317002BBF50 /* ListEntry.swift */; };
 		2D950ED01EE1D6F5002BBF50 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D950EBD1EE1D4CC002BBF50 /* Alamofire.framework */; };
 		2D950ED11EE1D6F5002BBF50 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D950EBD1EE1D4CC002BBF50 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2D950EDB1EE1E362002BBF50 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950ED91EE1E362002BBF50 /* SWXMLHash.swift */; };
-		2D950EDC1EE1E362002BBF50 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950EDA1EE1E362002BBF50 /* SWXMLHash+TypeConversion.swift */; };
+		2D96BBAA1EF05CAA00EA12A1 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBA91EF05CAA00EA12A1 /* Utility.swift */; };
+		2D96BBC01EF05F1000EA12A1 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBBD1EF05F1000EA12A1 /* SSKeychain.m */; };
+		2D96BBC11EF05F1000EA12A1 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBBF1EF05F1000EA12A1 /* SSKeychainQuery.m */; };
+		2D96BBC41EF0653B00EA12A1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBC31EF0653B00EA12A1 /* XMLReader.m */; };
 		2DDFFF201EEEF49700EB1509 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF131EEEF47100EB1509 /* OAuthSwift.framework */; };
 		2DDFFF211EEEF49700EB1509 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF131EEEF47100EB1509 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DDFFF441EEEF4FB00EB1509 /* OAuthSwiftAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF301EEEF4E000EB1509 /* OAuthSwiftAlamofire.framework */; };
 		2DDFFF451EEEF4FB00EB1509 /* OAuthSwiftAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF301EEEF4E000EB1509 /* OAuthSwiftAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DDFFF491EEF077300EB1509 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDFFF481EEF077300EB1509 /* KeychainSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +204,7 @@
 				2DDFFF211EEEF49700EB1509 /* OAuthSwift.framework in Embed Frameworks */,
 				2D950ED11EE1D6F5002BBF50 /* Alamofire.framework in Embed Frameworks */,
 				2DDFFF451EEEF4FB00EB1509 /* OAuthSwiftAlamofire.framework in Embed Frameworks */,
+				2D626E461EF074C50057AC3F /* MASPreferences.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,14 +217,24 @@
 		2D2A60A31EDF9772007CB521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D2A60A61EDF9773007CB521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2D2A60A81EDF9773007CB521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D697DBE1EF06BCD0053F576 /* XMLtoAtarashiiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLtoAtarashiiFormat.h; sourceTree = "<group>"; };
+		2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLtoAtarashiiFormat.m; sourceTree = "<group>"; };
+		2D697DD51EF073410053F576 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		2D697DD61EF073410053F576 /* General.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = General.xib; sourceTree = "<group>"; };
+		2D697DD91EF074700053F576 /* MASPreferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MASPreferences.framework; sourceTree = "<group>"; };
 		2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnimeList.swift; sourceTree = "<group>"; };
 		2D950EAB1EE1D317002BBF50 /* ListEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEntry.swift; sourceTree = "<group>"; };
 		2D950EAD1EE1D4CC002BBF50 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		2D950ED91EE1E362002BBF50 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
-		2D950EDA1EE1E362002BBF50 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
+		2D96BBA91EF05CAA00EA12A1 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		2D96BBBB1EF05F0F00EA12A1 /* AniLibrary Sync-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AniLibrary Sync-Bridging-Header.h"; sourceTree = "<group>"; };
+		2D96BBBC1EF05F1000EA12A1 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		2D96BBBD1EF05F1000EA12A1 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		2D96BBBE1EF05F1000EA12A1 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		2D96BBBF1EF05F1000EA12A1 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		2D96BBC21EF0653B00EA12A1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		2D96BBC31EF0653B00EA12A1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		2DDFFEFF1EEEF47100EB1509 /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = Alamofire/../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		2DDFFF241EEEF4DF00EB1509 /* OAuthSwift-Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "OAuthSwift-Alamofire.xcodeproj"; path = "OAuthSwiftAlamofire/OAuthSwift-Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		2DDFFF481EEF077300EB1509 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +244,8 @@
 			files = (
 				2DDFFF201EEEF49700EB1509 /* OAuthSwift.framework in Frameworks */,
 				2D950ED01EE1D6F5002BBF50 /* Alamofire.framework in Frameworks */,
+				2D697DDA1EF074700053F576 /* MASPreferences.framework in Frameworks */,
+				2D626E451EF074C50057AC3F /* MASPreferences.framework in Frameworks */,
 				2DDFFF441EEEF4FB00EB1509 /* OAuthSwiftAlamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,15 +275,25 @@
 		2D2A60A01EDF9772007CB521 /* AniLibrary Sync */ = {
 			isa = PBXGroup;
 			children = (
+				2D96BBBC1EF05F1000EA12A1 /* SSKeychain.h */,
+				2D96BBBD1EF05F1000EA12A1 /* SSKeychain.m */,
+				2D96BBBE1EF05F1000EA12A1 /* SSKeychainQuery.h */,
+				2D96BBBF1EF05F1000EA12A1 /* SSKeychainQuery.m */,
+				2D96BBC21EF0653B00EA12A1 /* XMLReader.h */,
+				2D96BBC31EF0653B00EA12A1 /* XMLReader.m */,
 				2D2A60A11EDF9772007CB521 /* AppDelegate.swift */,
 				2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */,
-				2DDFFF481EEF077300EB1509 /* KeychainSwift.swift */,
 				2D950EAB1EE1D317002BBF50 /* ListEntry.swift */,
-				2D950ED91EE1E362002BBF50 /* SWXMLHash.swift */,
-				2D950EDA1EE1E362002BBF50 /* SWXMLHash+TypeConversion.swift */,
 				2D2A60A31EDF9772007CB521 /* Assets.xcassets */,
 				2D2A60A51EDF9773007CB521 /* MainMenu.xib */,
 				2D2A60A81EDF9773007CB521 /* Info.plist */,
+				2D96BBA91EF05CAA00EA12A1 /* Utility.swift */,
+				2D96BBBB1EF05F0F00EA12A1 /* AniLibrary Sync-Bridging-Header.h */,
+				2D697DBE1EF06BCD0053F576 /* XMLtoAtarashiiFormat.h */,
+				2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */,
+				2D697DD51EF073410053F576 /* General.swift */,
+				2D697DD61EF073410053F576 /* General.xib */,
+				2D697DD91EF074700053F576 /* MASPreferences.framework */,
 			);
 			path = "AniLibrary Sync";
 			sourceTree = "<group>";
@@ -346,6 +376,7 @@
 					2D2A609D1EDF9772007CB521 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9HDZTER525;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -518,6 +549,7 @@
 			files = (
 				2D2A60A41EDF9772007CB521 /* Assets.xcassets in Resources */,
 				2D2A60A71EDF9773007CB521 /* MainMenu.xib in Resources */,
+				2D697DD81EF073410053F576 /* General.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,12 +560,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D96BBAA1EF05CAA00EA12A1 /* Utility.swift in Sources */,
 				2D950EAA1EE1D2D7002BBF50 /* MyAnimeList.swift in Sources */,
-				2D950EDB1EE1E362002BBF50 /* SWXMLHash.swift in Sources */,
+				2D96BBC01EF05F1000EA12A1 /* SSKeychain.m in Sources */,
+				2D697DD71EF073410053F576 /* General.swift in Sources */,
+				2D96BBC11EF05F1000EA12A1 /* SSKeychainQuery.m in Sources */,
+				2D697DC01EF06BCD0053F576 /* XMLtoAtarashiiFormat.m in Sources */,
 				2D2A60A21EDF9772007CB521 /* AppDelegate.swift in Sources */,
 				2D950EAC1EE1D317002BBF50 /* ListEntry.swift in Sources */,
-				2D950EDC1EE1E362002BBF50 /* SWXMLHash+TypeConversion.swift in Sources */,
-				2DDFFF491EEF077300EB1509 /* KeychainSwift.swift in Sources */,
+				2D96BBC41EF0653B00EA12A1 /* XMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +640,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -624,6 +660,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AniLibrary Sync/AniLibrary Sync-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -654,6 +692,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -665,6 +704,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AniLibrary Sync/AniLibrary Sync-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -674,13 +715,26 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9HDZTER525;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = "AniLibrary Sync/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "moe.ateliershiori.AniLibrary-Sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AniLibrary Sync/AniLibrary Sync-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -690,13 +744,25 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9HDZTER525;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(PROJECT_DIR)/AniLibrary\\ Sync",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = "AniLibrary Sync/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "moe.ateliershiori.AniLibrary-Sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AniLibrary Sync/AniLibrary Sync-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
