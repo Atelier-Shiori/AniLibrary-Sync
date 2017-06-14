@@ -111,7 +111,7 @@ public class MyAnimeList : NSObject {
     }
     
     static func retrieveAccountUsername() -> String {
-        let accounts : NSArray? = SSKeychain.accounts(forService: "AniLibrary Sync") as NSArray?
+        let accounts : NSArray? = SSKeychain.accounts(forService: "AniLibrary Sync - MAL") as NSArray?
         if (accounts == nil) {
             return ""
         }
@@ -127,16 +127,16 @@ public class MyAnimeList : NSObject {
     }
     
     static func saveaccount(username: String, password: String) -> Bool {
-        return SSKeychain.setPassword(password, forService: "AniLibrary Sync", account: username)
+        return SSKeychain.setPassword(password, forService: "AniLibrary Sync - MAL", account: username)
     }
     
     static func removeaccount() -> Bool {
-        return SSKeychain.deletePassword(forService: "AniLibrary Sync", account: retrieveAccountUsername())
+        return SSKeychain.deletePassword(forService: "AniLibrary Sync - MAL", account: retrieveAccountUsername())
     }
     
     static func retrieveBase64() -> String {
         let username : String = retrieveAccountUsername()
-        let password : String = SSKeychain.password(forService: "AniLibrary Sync", account: username)
+        let password : String = SSKeychain.password(forService: "AniLibrary Sync - MAL", account: username)
         return Utility.base64Encoding(string: username + ":" + password)
     }
 }

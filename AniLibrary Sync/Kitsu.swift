@@ -8,9 +8,11 @@
 
 import Foundation
 import Alamofire
+import OAuth2
 
 public class Kitsu : NSObject {
-    static var OAuthClient: OAuth2Swift = OAuth2Swift(consumerKey: OAuthConstants.KitsuClientKey, consumerSecret: OAuthConstants.KitsuSecretKey, authorizeUrl: "https://kitsu.io/api/oauth/token", responseType: "token")
+    static var oauth2: OAuth2PasswordGrant = OAuth2PasswordGrant(settings:  [
+        "client_id":OAuthConstants.KitsuClientKey, "client_secret":OAuthConstants.KitsuSecretKey,"token_uri":"https://kitsu.io/api/oauth/token", "keychain": false] as OAuth2JSON)
     
     func retrieveList(username: String, success: @escaping (Any) -> Void, error: @escaping (Error) -> Void)  {
         let URLStr : String = UserDefaults.standard.string(forKey: "MALAPIURL")!+"/2.1/animelist" + UserDefaults.standard.string(forKey: "MALUsername")!
@@ -98,20 +100,25 @@ public class Kitsu : NSObject {
         }
     }
     
-    static func login(username: String, password: String, success: @escaping(Any) -> Void, error: @escaping(Error) -> Void) {
-        OAuthClient.authorize(withCallbackURL: "", scope: "password", state: "", parameters: ["grant_type":"password", "username":username, "password":password], headers: [:], success: {
-            credential, response, parameters in
-            print(credential);
-            
-        }, failure: {
-            error in
-            print(error.localizedDescription)
+    static func login(username: String, password: String, completion: @escaping((success:Bool, error:Error?)) -> Void) {
+        oauth2.username = username
+        oauth2.password = password
+        oauth2.authorize(params: [:], callback: {
+            response, error in
+            if (error == nil){
+                let creddict: Dictionary<String,Any> = ["access_token":oauth2.accessToken!, "expires_in":Utility.jdFromDate(date: oauth2.accessTokenExpiry!), "refresh_token":oauth2.refreshToken!]
+                let success: Bool = saveaccount(username: username, oauthcred: creddict)
+                completion((success,error))
+            }
+            else {
+                completion((false,error))
+            }
         })
         
     }
     
     static func retrieveAccountUsername() -> String {
-        let accounts : NSArray? = SSKeychain.accounts(forService: "AniLibrary Sync") as NSArray?
+        let accounts : NSArray? = SSKeychain.accounts(forService: "AniLibrary Sync - Kitsu") as NSArray?
         if (accounts == nil) {
             return ""
         }
@@ -126,17 +133,83 @@ public class Kitsu : NSObject {
         return ""
     }
     
-    static func saveaccount(username: String, password: String) -> Bool {
-        return SSKeychain.setPassword(password, forService: "AniLibrary Sync", account: username)
+    static func saveaccount(username: String, oauthcred: Dictionary<String,Any>) -> Bool {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: oauthcred, options: .prettyPrinted)
+            return SSKeychain.setPasswordData(jsonData, forService: "AniLibrary Sync - Kitsu", account: username)
+        } catch {
+            print(error.localizedDescription)
+        }
+        return false;
     }
     
     static func removeaccount() -> Bool {
-        return SSKeychain.deletePassword(forService: "AniLibrary Sync", account: retrieveAccountUsername())
+        return SSKeychain.deletePassword(forService: "AniLibrary Sync - Kitsu", account: retrieveAccountUsername())
     }
     
-    static func retrieveBase64() -> String {
-        let username : String = retrieveAccountUsername()
-        let password : String = SSKeychain.password(forService: "AniLibrary Sync", account: username)
-        return Utility.base64Encoding(string: username + ":" + password)
+    static func retrieveOAuthCred() -> Dictionary<String,Any> {
+        let credData: Data = SSKeychain.passwordData(forService: "AniLibrary Sync - Kitsu", account: retrieveAccountUsername())
+        do {
+            let credJson = try JSONSerialization.jsonObject(with: credData, options: [])
+            if let dictFromJSON = credJson as? [String:Any] {
+                return dictFromJSON
+            }
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+        return [:]
+    }
+    
+    static func retrieveOAuthToken() -> String {
+        let credDic: Dictionary<String,Any> = retrieveOAuthCred()
+        let accesstoken: String = credDic["access_token"] as! String
+        return accesstoken
+    }
+    
+    static func loadcredentials() {
+        oauth2 = OAuth2PasswordGrant.init(settings: [
+            "client_id":OAuthConstants.KitsuClientKey, "client_secret":OAuthConstants.KitsuSecretKey,"token_uri":"https://kitsu.io/api/oauth/token", "keychain": false] as OAuth2JSON)
+        let cred: Dictionary<String,Any> = retrieveOAuthCred()
+        oauth2.accessToken = cred["access_token"] as? String
+        oauth2.refreshToken = cred["refresh_token"] as? String
+    }
+    
+    static func checkTokenExpired() -> Bool {
+        let credDic: Dictionary<String,Any> = retrieveOAuthCred()
+        let expireddatedouble: Double = credDic["expires_in"] as! Double
+        let expiredate: Date = Utility.dateFromJd(jd: expireddatedouble)
+        if (expiredate > Date()) {
+            return true
+        }
+        return false
+    }
+    
+    static func refreshtoken(completion: @escaping(Bool) -> Void) {
+        let username: String = retrieveAccountUsername()
+        let cred: Dictionary<String,Any> = retrieveOAuthCred()
+        if (checkTokenExpired()) {
+            oauth2 = OAuth2PasswordGrant.init(settings: [
+                "client_id":OAuthConstants.KitsuClientKey, "client_secret":OAuthConstants.KitsuSecretKey,"token_uri":"https://kitsu.io/api/oauth/token", "keychain": false] as OAuth2JSON)
+            oauth2.refreshToken = cred["refresh_token"] as? String
+            oauth2.doRefreshToken(callback: {
+                response, error in
+                if (error == nil){
+                    let creddict: Dictionary<String,Any> = ["access_token":oauth2.accessToken!, "expires_in":Utility.jdFromDate(date: oauth2.accessTokenExpiry!), "refresh_token":oauth2.refreshToken!]
+                    //Remove Old Account
+                    if (removeaccount()) {
+                        let success: Bool = saveaccount(username: username, oauthcred: creddict)
+                        completion(success)
+                    }
+                    else {
+                        completion(false)
+                    }
+                }
+                else {
+                    completion(false)
+                }
+            })
+        }
+        completion(true)
     }
 }

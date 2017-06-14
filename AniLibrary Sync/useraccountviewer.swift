@@ -47,8 +47,15 @@ class useraccountviewer: NSViewController {
             }
         }
         else if (service == "Kitsu"){
-            clearsubviews()
-            self.view.addSubview(userloginview)
+            if (Kitsu.retrieveAccountUsername() != "") {
+                clearsubviews()
+                self.view.addSubview(loggedinview)
+                loggedinusername.stringValue = Kitsu.retrieveAccountUsername();
+            }
+            else {
+                clearsubviews()
+                self.view.addSubview(userloginview)
+            }
         }
         else if (service == "AniList"){
             
@@ -96,10 +103,23 @@ class useraccountviewer: NSViewController {
             })
         }
         else if (serviceset == "Kitsu"){
-            Kitsu.login(username: usernamefield.stringValue, password: passwordfield.stringValue, success: {
-                (result: Any) in
-            }, error: {
-                (error: Error) in
+            self.loginbtn.isEnabled = false
+            Kitsu.login(username: usernamefield.stringValue, password: passwordfield.stringValue, completion: {
+                success,error in
+                self.loginbtn.isEnabled = true
+                if (success) {
+                    self.loggedinusername.stringValue = Kitsu.retrieveAccountUsername()
+                    self.loadserviceview(service: self.serviceset!)
+                    Utility.showSheetMessage(message: "Login Successful", explainmessage: "Login is successful", w: self.view.window)
+                }
+                else {
+                    if (error != nil){
+                        Utility.showSheetMessage(message: "AniLibrary Sync was unable to log you in" , explainmessage: (error?.localizedDescription)!, w: self.view.window)
+                    }
+                    else {
+                        Utility.showSheetMessage(message: "Login not successful", explainmessage: "Couldn't save user credentials to the login keychain. Make sure you have access to it and try again.", w: self.view.window)
+                    }
+                }
             })
         }
     }

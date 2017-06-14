@@ -30,6 +30,8 @@
 		2DA4A1831EF08E06007BFD33 /* useraccountviewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA4A1811EF08E06007BFD33 /* useraccountviewer.xib */; };
 		2DD5594D1EF1994B00C79A8E /* Kitsu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5594C1EF1994B00C79A8E /* Kitsu.swift */; };
 		2DD5595F1EF1998800C79A8E /* OAuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5595E1EF1998800C79A8E /* OAuthConstants.swift */; };
+		2DD559711EF1A78400C79A8E /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD559681EF1A72B00C79A8E /* OAuth2.framework */; };
+		2DD559721EF1A78400C79A8E /* OAuth2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD559681EF1A72B00C79A8E /* OAuth2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,48 @@
 			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
 			remoteInfo = "Alamofire macOS";
 		};
+		2DD559671EF1A72B00C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE209471942772800736F1A;
+			remoteInfo = OAuth2macOS;
+		};
+		2DD559691EF1A72B00C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEDB8624193FAAE500C4EEA1;
+			remoteInfo = OAuth2iOS;
+		};
+		2DD5596B1EF1A72B00C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 659854461C5B3BEA00237D39;
+			remoteInfo = OAuth2tvOS;
+		};
+		2DD5596D1EF1A72B00C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEE209A219427DFE00736F1A;
+			remoteInfo = OAuth2Tests;
+		};
+		2DD5596F1EF1A77C00C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEE209461942772800736F1A;
+			remoteInfo = OAuth2macOS;
+		};
+		2DD559731EF1A78400C79A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEE209461942772800736F1A;
+			remoteInfo = OAuth2macOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +143,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2D950ED11EE1D6F5002BBF50 /* Alamofire.framework in Embed Frameworks */,
+				2DD559721EF1A78400C79A8E /* OAuth2.framework in Embed Frameworks */,
 				2D626E461EF074C50057AC3F /* MASPreferences.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -134,6 +179,7 @@
 		2DA4A1811EF08E06007BFD33 /* useraccountviewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = useraccountviewer.xib; sourceTree = "<group>"; };
 		2DD5594C1EF1994B00C79A8E /* Kitsu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kitsu.swift; sourceTree = "<group>"; };
 		2DD5595E1EF1998800C79A8E /* OAuthConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthConstants.swift; sourceTree = "<group>"; };
+		2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2.xcodeproj; path = OAuth2/OAuth2.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +190,7 @@
 				2D950ED01EE1D6F5002BBF50 /* Alamofire.framework in Frameworks */,
 				2D697DDA1EF074700053F576 /* MASPreferences.framework in Frameworks */,
 				2D626E451EF074C50057AC3F /* MASPreferences.framework in Frameworks */,
+				2DD559711EF1A78400C79A8E /* OAuth2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +202,7 @@
 			children = (
 				2D2A60A01EDF9772007CB521 /* AniLibrary Sync */,
 				2D2A609F1EDF9772007CB521 /* Products */,
+				2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */,
 				2D950EAD1EE1D4CC002BBF50 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -221,6 +269,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2DD559611EF1A72B00C79A8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DD559681EF1A72B00C79A8E /* OAuth2.framework */,
+				2DD5596A1EF1A72B00C79A8E /* OAuth2.framework */,
+				2DD5596C1EF1A72B00C79A8E /* OAuth2.framework */,
+				2DD5596E1EF1A72B00C79A8E /* OAuth2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,7 +295,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				2DD559701EF1A77C00C79A8E /* PBXTargetDependency */,
 				2D950ED31EE1D6F5002BBF50 /* PBXTargetDependency */,
+				2DD559741EF1A78400C79A8E /* PBXTargetDependency */,
 			);
 			name = "AniLibrary Sync";
 			productName = "AniLibrary Sync";
@@ -276,6 +337,10 @@
 				{
 					ProductGroup = 2D950EAE1EE1D4CC002BBF50 /* Products */;
 					ProjectRef = 2D950EAD1EE1D4CC002BBF50 /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = 2DD559611EF1A72B00C79A8E /* Products */;
+					ProjectRef = 2DD559601EF1A72B00C79A8E /* OAuth2.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -335,6 +400,34 @@
 			remoteRef = 2D950EC41EE1D4CC002BBF50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		2DD559681EF1A72B00C79A8E /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 2DD559671EF1A72B00C79A8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2DD5596A1EF1A72B00C79A8E /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 2DD559691EF1A72B00C79A8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2DD5596C1EF1A72B00C79A8E /* OAuth2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2.framework;
+			remoteRef = 2DD5596B1EF1A72B00C79A8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2DD5596E1EF1A72B00C79A8E /* OAuth2Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OAuth2Tests.xctest;
+			remoteRef = 2DD5596D1EF1A72B00C79A8E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -380,6 +473,16 @@
 			isa = PBXTargetDependency;
 			name = "Alamofire macOS";
 			targetProxy = 2D950ED21EE1D6F5002BBF50 /* PBXContainerItemProxy */;
+		};
+		2DD559701EF1A77C00C79A8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2macOS;
+			targetProxy = 2DD5596F1EF1A77C00C79A8E /* PBXContainerItemProxy */;
+		};
+		2DD559741EF1A78400C79A8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2macOS;
+			targetProxy = 2DD559731EF1A78400C79A8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -510,7 +613,7 @@
 				);
 				INFOPLIST_FILE = "AniLibrary Sync/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "moe.ateliershiori.AniLibrary-Sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -539,7 +642,7 @@
 				);
 				INFOPLIST_FILE = "AniLibrary Sync/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "moe.ateliershiori.AniLibrary-Sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
