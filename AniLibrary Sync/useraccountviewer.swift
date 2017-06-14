@@ -99,6 +99,35 @@ class useraccountviewer: NSViewController {
         }
     }
     
+    @IBAction func removeAccount(_ sender: Any) {
+        let alert: NSAlert = NSAlert()
+        alert.messageText = "Are you sure you want to remove this account?"
+        alert.informativeText = "Once done, it cannot be undone."
+        alert.alertStyle = NSInformationalAlertStyle
+        alert.addButton(withTitle: "Yes")
+        alert.addButton(withTitle: "No")
+        alert.beginSheetModal(for: self.view.window!, completionHandler: {
+            (responsecontext: NSModalResponse) in
+            if (responsecontext == NSAlertFirstButtonReturn) {
+                self.performaccountremoval()
+            }
+        })
+    }
+    
+    func performaccountremoval() {
+        if (serviceset == "MyAnimeList") {
+            if (MyAnimeList.removeaccount()) {
+                loadserviceview(service: serviceset!)
+            }
+        }
+        else if (serviceset == "Kitsu"){
+            
+        }
+        else if (serviceset == "AniList"){
+            
+        }
+    }
+    
     func clearsubviews() {
         for view in self.view.subviews {
             view.removeFromSuperview()
