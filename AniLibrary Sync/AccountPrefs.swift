@@ -13,6 +13,9 @@ class AccountPrefs: NSViewController, MASPreferencesViewController {
     @IBOutlet var myanimelistloginview: NSView!
     var MALLoginViewController: useraccountviewer?
     
+    @IBOutlet var kitsuloginview: NSView!
+    var KitsuLoginViewController: useraccountviewer?
+    
     override var nibName: String? {
         get {
             return "AccountPrefs"
@@ -55,6 +58,14 @@ class AccountPrefs: NSViewController, MASPreferencesViewController {
         }
         myanimelistloginview.addSubview((MALLoginViewController?.view)!)
         MALLoginViewController?.loadserviceview(service: "MyAnimeList")
+        
+        KitsuLoginViewController = useraccountviewer()
+        if (!(KitsuLoginViewController?.isViewLoaded)!) {
+            KitsuLoginViewController?.viewDidLoad()
+        }
+        kitsuloginview.addSubview((KitsuLoginViewController?.view)!)
+        KitsuLoginViewController?.loadserviceview(service: "Kitsu")
+        
     }
     
 }

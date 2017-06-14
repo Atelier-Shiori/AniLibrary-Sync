@@ -1,15 +1,17 @@
 //
-//  MyAnimeList.swift
+//  Kitsu.swift
 //  AniLibrary Sync
 //
-//  Created by 桐間紗路 on 2017/06/02.
+//  Created by 桐間紗路 on 2017/06/14.
 //  Copyright © 2017 Atelier Shiori. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-public class MyAnimeList : NSObject {
+public class Kitsu : NSObject {
+    static var OAuthClient: OAuth2Swift = OAuth2Swift(consumerKey: OAuthConstants.KitsuClientKey, consumerSecret: OAuthConstants.KitsuSecretKey, authorizeUrl: "https://kitsu.io/api/oauth/token", responseType: "token")
+    
     func retrieveList(username: String, success: @escaping (Any) -> Void, error: @escaping (Error) -> Void)  {
         let URLStr : String = UserDefaults.standard.string(forKey: "MALAPIURL")!+"/2.1/animelist" + UserDefaults.standard.string(forKey: "MALUsername")!
         Alamofire.request(URLStr).responseJSON { response in
@@ -55,12 +57,12 @@ public class MyAnimeList : NSObject {
         ]
         Alamofire.request(URLStr, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: [:])
             .responseJSON { response in
-            switch response.result {
-            case .success:
-                success(response.result.value as Any);
-            case .failure:
-                error(response.error!);
-            }
+                switch response.result {
+                case .success:
+                    success(response.result.value as Any);
+                case .failure:
+                    error(response.error!);
+                }
         }
         
     }
@@ -97,16 +99,14 @@ public class MyAnimeList : NSObject {
     }
     
     static func login(username: String, password: String, success: @escaping(Any) -> Void, error: @escaping(Error) -> Void) {
-        let URLStr : String = UserDefaults.standard.string(forKey: "MALAPIURL")!+"/1/account/verify_credentials"
-        Alamofire.request(URLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: ["Authorization":"Basic " + Utility.base64Encoding(string: username + ":" + password)])
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    success(response.result.value as Any);
-                case .failure:
-                    error(response.error!);
-                }
-        }
+        OAuthClient.authorize(withCallbackURL: "", scope: "password", state: "", parameters: ["grant_type":"password", "username":username, "password":password], headers: [:], success: {
+            credential, response, parameters in
+            print(credential);
+            
+        }, failure: {
+            error in
+            print(error.localizedDescription)
+        })
         
     }
     

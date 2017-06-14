@@ -45,14 +45,15 @@ class useraccountviewer: NSViewController {
                 clearsubviews()
                 self.view.addSubview(userloginview)
             }
-            serviceset = service
         }
         else if (service == "Kitsu"){
-            
+            clearsubviews()
+            self.view.addSubview(userloginview)
         }
         else if (service == "AniList"){
             
         }
+        serviceset = service
     }
     // Username Login
     @IBAction func performusernamelogin(_ sender: Any) {
@@ -66,7 +67,7 @@ class useraccountviewer: NSViewController {
         }
         else if (serviceset == "AniList") {
             if (pinfield.stringValue.characters.count == 0) {
-                Utility.showSheetMessage(message: "Login not successful", explainmessage: "Couldn't save user credentials to the login keychain. Make sure you have access to it and try again.", w: self.view.window)
+                Utility.showSheetMessage(message: "AniLibrary Sync was unable to log you in since you didn't enter a pin", explainmessage: "Please retrieve a pin and copy it to the pin field.", w: self.view.window)
             }
             else {
                 performLogin()
@@ -95,7 +96,11 @@ class useraccountviewer: NSViewController {
             })
         }
         else if (serviceset == "Kitsu"){
-            
+            Kitsu.login(username: usernamefield.stringValue, password: passwordfield.stringValue, success: {
+                (result: Any) in
+            }, error: {
+                (error: Error) in
+            })
         }
     }
     
