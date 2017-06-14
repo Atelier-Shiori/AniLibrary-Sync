@@ -12,7 +12,7 @@ import MASPreferences
 class General: NSViewController, MASPreferencesViewController {
     override var nibName: String? {
         get {
-            return "General"
+            return "GeneralPref"
         }
     }
     

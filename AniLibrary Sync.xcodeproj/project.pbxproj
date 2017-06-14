@@ -12,9 +12,11 @@
 		2D2A60A71EDF9773007CB521 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2A60A51EDF9773007CB521 /* MainMenu.xib */; };
 		2D626E451EF074C50057AC3F /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; };
 		2D626E461EF074C50057AC3F /* MASPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D626E5C1EF07D4B0057AC3F /* AccountPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D626E5A1EF07D4B0057AC3F /* AccountPrefs.swift */; };
+		2D626E5D1EF07D4B0057AC3F /* AccountPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D626E5B1EF07D4B0057AC3F /* AccountPrefs.xib */; };
 		2D697DC01EF06BCD0053F576 /* XMLtoAtarashiiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */; };
-		2D697DD71EF073410053F576 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D697DD51EF073410053F576 /* General.swift */; };
-		2D697DD81EF073410053F576 /* General.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D697DD61EF073410053F576 /* General.xib */; };
+		2D697DD71EF073410053F576 /* GeneralPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D697DD51EF073410053F576 /* GeneralPref.swift */; };
+		2D697DD81EF073410053F576 /* GeneralPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D697DD61EF073410053F576 /* GeneralPref.xib */; };
 		2D697DDA1EF074700053F576 /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D697DD91EF074700053F576 /* MASPreferences.framework */; };
 		2D950EAA1EE1D2D7002BBF50 /* MyAnimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */; };
 		2D950EAC1EE1D317002BBF50 /* ListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D950EAB1EE1D317002BBF50 /* ListEntry.swift */; };
@@ -24,6 +26,8 @@
 		2D96BBC01EF05F1000EA12A1 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBBD1EF05F1000EA12A1 /* SSKeychain.m */; };
 		2D96BBC11EF05F1000EA12A1 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBBF1EF05F1000EA12A1 /* SSKeychainQuery.m */; };
 		2D96BBC41EF0653B00EA12A1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D96BBC31EF0653B00EA12A1 /* XMLReader.m */; };
+		2DA4A1821EF08E06007BFD33 /* useraccountviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4A1801EF08E06007BFD33 /* useraccountviewer.swift */; };
+		2DA4A1831EF08E06007BFD33 /* useraccountviewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA4A1811EF08E06007BFD33 /* useraccountviewer.xib */; };
 		2DDFFF201EEEF49700EB1509 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF131EEEF47100EB1509 /* OAuthSwift.framework */; };
 		2DDFFF211EEEF49700EB1509 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF131EEEF47100EB1509 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DDFFF441EEEF4FB00EB1509 /* OAuthSwiftAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDFFF301EEEF4E000EB1509 /* OAuthSwiftAlamofire.framework */; };
@@ -217,10 +221,12 @@
 		2D2A60A31EDF9772007CB521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D2A60A61EDF9773007CB521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2D2A60A81EDF9773007CB521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D626E5A1EF07D4B0057AC3F /* AccountPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPrefs.swift; sourceTree = "<group>"; };
+		2D626E5B1EF07D4B0057AC3F /* AccountPrefs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountPrefs.xib; sourceTree = "<group>"; };
 		2D697DBE1EF06BCD0053F576 /* XMLtoAtarashiiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLtoAtarashiiFormat.h; sourceTree = "<group>"; };
 		2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLtoAtarashiiFormat.m; sourceTree = "<group>"; };
-		2D697DD51EF073410053F576 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
-		2D697DD61EF073410053F576 /* General.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = General.xib; sourceTree = "<group>"; };
+		2D697DD51EF073410053F576 /* GeneralPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPref.swift; sourceTree = "<group>"; };
+		2D697DD61EF073410053F576 /* GeneralPref.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPref.xib; sourceTree = "<group>"; };
 		2D697DD91EF074700053F576 /* MASPreferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MASPreferences.framework; sourceTree = "<group>"; };
 		2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnimeList.swift; sourceTree = "<group>"; };
 		2D950EAB1EE1D317002BBF50 /* ListEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEntry.swift; sourceTree = "<group>"; };
@@ -233,6 +239,8 @@
 		2D96BBBF1EF05F1000EA12A1 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		2D96BBC21EF0653B00EA12A1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		2D96BBC31EF0653B00EA12A1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		2DA4A1801EF08E06007BFD33 /* useraccountviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = useraccountviewer.swift; sourceTree = "<group>"; };
+		2DA4A1811EF08E06007BFD33 /* useraccountviewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = useraccountviewer.xib; sourceTree = "<group>"; };
 		2DDFFEFF1EEEF47100EB1509 /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = Alamofire/../OAuthSwift/OAuthSwift.xcodeproj; sourceTree = "<group>"; };
 		2DDFFF241EEEF4DF00EB1509 /* OAuthSwift-Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "OAuthSwift-Alamofire.xcodeproj"; path = "OAuthSwiftAlamofire/OAuthSwift-Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +283,7 @@
 		2D2A60A01EDF9772007CB521 /* AniLibrary Sync */ = {
 			isa = PBXGroup;
 			children = (
+				2D626E571EF07D110057AC3F /* Preferences */,
 				2D96BBBC1EF05F1000EA12A1 /* SSKeychain.h */,
 				2D96BBBD1EF05F1000EA12A1 /* SSKeychain.m */,
 				2D96BBBE1EF05F1000EA12A1 /* SSKeychainQuery.h */,
@@ -283,6 +292,8 @@
 				2D96BBC31EF0653B00EA12A1 /* XMLReader.m */,
 				2D2A60A11EDF9772007CB521 /* AppDelegate.swift */,
 				2D950EA91EE1D2D7002BBF50 /* MyAnimeList.swift */,
+				2DA4A1801EF08E06007BFD33 /* useraccountviewer.swift */,
+				2DA4A1811EF08E06007BFD33 /* useraccountviewer.xib */,
 				2D950EAB1EE1D317002BBF50 /* ListEntry.swift */,
 				2D2A60A31EDF9772007CB521 /* Assets.xcassets */,
 				2D2A60A51EDF9773007CB521 /* MainMenu.xib */,
@@ -291,11 +302,20 @@
 				2D96BBBB1EF05F0F00EA12A1 /* AniLibrary Sync-Bridging-Header.h */,
 				2D697DBE1EF06BCD0053F576 /* XMLtoAtarashiiFormat.h */,
 				2D697DBF1EF06BCD0053F576 /* XMLtoAtarashiiFormat.m */,
-				2D697DD51EF073410053F576 /* General.swift */,
-				2D697DD61EF073410053F576 /* General.xib */,
 				2D697DD91EF074700053F576 /* MASPreferences.framework */,
 			);
 			path = "AniLibrary Sync";
+			sourceTree = "<group>";
+		};
+		2D626E571EF07D110057AC3F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2D626E5A1EF07D4B0057AC3F /* AccountPrefs.swift */,
+				2D626E5B1EF07D4B0057AC3F /* AccountPrefs.xib */,
+				2D697DD51EF073410053F576 /* GeneralPref.swift */,
+				2D697DD61EF073410053F576 /* GeneralPref.xib */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		2D950EAE1EE1D4CC002BBF50 /* Products */ = {
@@ -547,9 +567,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA4A1831EF08E06007BFD33 /* useraccountviewer.xib in Resources */,
 				2D2A60A41EDF9772007CB521 /* Assets.xcassets in Resources */,
 				2D2A60A71EDF9773007CB521 /* MainMenu.xib in Resources */,
-				2D697DD81EF073410053F576 /* General.xib in Resources */,
+				2D626E5D1EF07D4B0057AC3F /* AccountPrefs.xib in Resources */,
+				2D697DD81EF073410053F576 /* GeneralPref.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,14 +582,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D626E5C1EF07D4B0057AC3F /* AccountPrefs.swift in Sources */,
 				2D96BBAA1EF05CAA00EA12A1 /* Utility.swift in Sources */,
 				2D950EAA1EE1D2D7002BBF50 /* MyAnimeList.swift in Sources */,
 				2D96BBC01EF05F1000EA12A1 /* SSKeychain.m in Sources */,
-				2D697DD71EF073410053F576 /* General.swift in Sources */,
+				2D697DD71EF073410053F576 /* GeneralPref.swift in Sources */,
 				2D96BBC11EF05F1000EA12A1 /* SSKeychainQuery.m in Sources */,
 				2D697DC01EF06BCD0053F576 /* XMLtoAtarashiiFormat.m in Sources */,
 				2D2A60A21EDF9772007CB521 /* AppDelegate.swift in Sources */,
 				2D950EAC1EE1D317002BBF50 /* ListEntry.swift in Sources */,
+				2DA4A1821EF08E06007BFD33 /* useraccountviewer.swift in Sources */,
 				2D96BBC41EF0653B00EA12A1 /* XMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

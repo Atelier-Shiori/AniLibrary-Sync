@@ -30,7 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusImage?.isTemplate = true
         statusItem?.image = statusImage
         statusItem!.menu = statusmenu
-        
+        // Set defaults
+        self.setdefaultvalues()
+    }
+    
+    func setdefaultvalues() {
+        let defaultsettings: Dictionary<String,Any> = ["donated":false, "MALAPIURL":"https://malapi.ateliershiori.moe"]
+        UserDefaults.standard.register(defaults: defaultsettings)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -40,7 +46,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func preferencesWindowController() -> NSWindowController {
         if (preferenceWindow == nil) {
             let generalViewController = General()
-            let controllers : Array<NSViewController> = [generalViewController]
+            let accountViewController = AccountPrefs()
+            let controllers : Array<NSViewController> = [generalViewController, accountViewController]
             preferenceWindow = MASPreferencesWindowController.init(viewControllers: controllers)
         }
         return preferenceWindow!

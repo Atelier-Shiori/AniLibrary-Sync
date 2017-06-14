@@ -8,18 +8,21 @@
 
 import Foundation
 struct ListEntry {
-    let idnum : Int
-    let title : String
-    let watchedepisodes : Int
-    let score : Float?
-    let entrynotes : String?
-    let rewatching : Bool?
-    let rewatchcount : Int?
-    let entrytype : Int
-}
-
-enum entrytype {
-    case MyAnimeList
-    case Kitsu
-    case AniList
+    var idnum : Int
+    var title : String
+    var watchedepisodes : Int
+    var watchedstatus : String
+    var score : Float?
+    var entrynotes : String?
+    var rewatching : Bool?
+    var rewatchcount : Int?
+    var entrytype : String
+    
+    init(idnumber:Int, showtitle: String, wepisodes: Int, wstatus: String, etype: String) {
+        self.idnum = idnumber
+        self.title = showtitle
+        self.watchedepisodes = wepisodes
+        self.watchedstatus = wstatus
+        self.entrytype = etype
+    }
 }

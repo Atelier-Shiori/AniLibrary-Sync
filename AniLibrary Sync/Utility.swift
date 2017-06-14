@@ -14,4 +14,14 @@ public class Utility : NSObject {
         let base64string = plaindata.base64EncodedString()
         return base64string
     }
+    static func showSheetMessage(message:String, explainmessage:String, w:NSWindow?) {
+        let alert: NSAlert = NSAlert()
+        alert.addButton(withTitle: "OK")
+        alert.messageText = message
+        alert.informativeText = explainmessage
+        alert.alertStyle = NSInformationalAlertStyle
+        alert.beginSheetModal(for: w!, completionHandler: {
+            (responsecontext :NSModalResponse) in
+        })
+    }
 }

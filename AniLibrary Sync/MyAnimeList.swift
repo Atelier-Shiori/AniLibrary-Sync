@@ -22,6 +22,17 @@ public class MyAnimeList : NSObject {
         }
     }
     
+    func listtoListEntryArray(list: Any) -> Array<ListEntry> {
+        let listarray: Array<Dictionary<String, Any>> = list as! Array<Dictionary<String, Any>>
+        var finalarray: Array<ListEntry> = []
+        for entry in listarray {
+            var lentry: ListEntry = ListEntry(idnumber: entry["id"] as! Int, showtitle: entry["title"] as! String, wepisodes: entry["watched_episodes"] as! Int, wstatus: entry["watched_status"] as! String, etype: "MyAnimeList")
+            lentry.score = entry["score"] as! Float?
+            finalarray.append(lentry)
+        }
+        return finalarray
+    }
+    
     func search(term: String, success: @escaping (Any) -> Void, error: @escaping (Error) -> Void) {
         let URLStr : String = "https://myanimelist.net/api/anime/search.xml?q=" + term.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         Alamofire.request(URLStr).responseString { response in
@@ -87,12 +98,13 @@ public class MyAnimeList : NSObject {
     
     static func login(username: String, password: String, success: @escaping(Any) -> Void, error: @escaping(Error) -> Void) {
         let URLStr : String = UserDefaults.standard.string(forKey: "MALAPIURL")!+"/1/account/verify_credentials"
-        Alamofire.request(URLStr, method: .delete, parameters: [:], encoding: URLEncoding.default, headers: ["Authorization":"Basic " + Utility.base64Encoding(string: username + ":" + password)])
+        Alamofire.request(URLStr, method: .get, parameters: [:], encoding: URLEncoding.default, headers: ["Authorization":"Basic " + Utility.base64Encoding(string: username + ":" + password)])
             .responseJSON { response in
                 switch response.result {
                 case .success:
                     success(response.result.value as Any);
                 case .failure:
+                    print(String.init(data: response.data!, encoding: .utf8))
                     error(response.error!);
                 }
         }
@@ -100,12 +112,15 @@ public class MyAnimeList : NSObject {
     }
     
     static func retrieveAccountUsername() -> String {
-        let accounts : NSArray = SSKeychain.accounts(forService: "AniLibrary Sync") as NSArray
-        if (accounts.count > 0) {
+        let accounts : NSArray? = SSKeychain.accounts(forService: "AniLibrary Sync") as NSArray?
+        if (accounts == nil) {
+            return ""
+        }
+        if (accounts!.count > 0) {
             //retrieve first valid account
-            for account in accounts {
+            for account in accounts! {
                 let a = account as! NSDictionary
-                let username : NSString = a.value(forKey: "username") as! NSString
+                let username : NSString = a.value(forKey: "acct") as! NSString
                 return username as String
             }
         }
